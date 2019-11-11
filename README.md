@@ -5,6 +5,7 @@ This repository includes projects I wrote while learning <span>ASP.</span>NET Co
 * Visual Studio scaffolds <span>ASP.</span>NET Core web applications with Razor Pages by default.
     * <span>ASP.</span>NET MVC uses the [Front Controller](https://martinfowler.com/eaaCatalog/frontController.html) software design pattern, where a controller is responsible for handling requests to the application. Razor syntax is used for templating its views.
     * Razor Pages uses the [Page Controller](https://www.martinfowler.com/eaaCatalog/pageController.html) software design pattern, which combines the responsibilities of the View and the Controller into each page. This is a bit like Web Forms's .aspx files in that they have backing scripts that handle the logic for the page. https://docs.microsoft.com/en-us/aspnet/core/razor-pages/
+* Core added Tag Helpers as an alternative to HTML Helpers to reduce the amount of C# code in Razor views. https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/
 
 ## Projects
 ### aspnetcoreapp
