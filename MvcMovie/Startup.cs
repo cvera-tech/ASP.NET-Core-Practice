@@ -23,7 +23,14 @@ namespace MvcMovie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            // By default, Visual Studio sets up the app with Razor Pages
+            //services.AddRazorPages();
+
+            // AddMvcCore only adds in the required MVC services to the dependency injection container.
+            //services.AddMvcCore();
+
+            // AddMvc adds all the required MVC services
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,9 +54,16 @@ namespace MvcMovie
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
+            // Razor Pages
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapRazorPages();
+            //});
+
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
             });
         }
     }
